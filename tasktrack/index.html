@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>TaskTrack</h1>
+        <p>Gerenciador de tarefas e bugs</p>
+    </header>
+
+
+<main>
+    
+<div class="dashboard">
+    <div class="card-resumo">
+        <span>Total de registros</span>
+        <strong id="total-registros">0</strong>
+    </div>
+
+    <div class="card-resumo">
+        <span>Tarefas</span>
+        <strong id="total-tarefas">0</strong>
+    </div>
+
+    <div class="card-resumo">
+        <span>Bugs</span>
+        <strong id="total-bugs">0</strong>
+    </div>
+
+    <div class="card-resumo">
+        <span>Pendentes</span>
+        <strong id="total-pendentes">0</strong>
+    </div>
+
+    <div class="card-resumo">
+        <span>Em andamento</span>
+        <strong id="total-andamento">0</strong>
+    </div>
+
+    <div class="card-resumo">
+        <span>Concluídos</span>
+        <strong id="total-concluidos">0</strong>
+    </div>
+</div>
+
+    <section>
+        <h2>Minhas tarefas</h2>
+        <p>Organize suas tarefas e acompanhe seu progresso.</p>
+
+        <button id="nova-tarefa">+ Nova tarefa</button>
+
+        <form id="form-tarefa" hidden>
+            
+        <label for="tipo">Tipo de registro</label>
+        <select id="tipo">
+        <option value="tarefa">Tarefa</option>
+        <option value="bug">Bug</option>
+        </select>
+ 
+            <label for="titulo">Título</label>
+            <input
+                type="text"
+                id="titulo"
+                placeholder="Ex.: Corrigir erro de login"
+                required
+            >
+
+            <label for="descricao">Descrição</label>
+            <textarea
+                id="descricao"
+                placeholder="Descreva a tarefa..."
+            ></textarea>
+
+            <label for="prioridade">Prioridade</label>
+            <select id="prioridade">
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+            </select>
+            
+<label for="status">Status</label>
+<select id="status">
+    <option value="pendente">Pendente</option>
+    <option value="andamento">Em andamento</option>
+    <option value="concluida">Concluída</option>
+</select>
+
+
+            <button type="submit">Salvar tarefa</button>
+        </form>
+
+        
+<div class="area-pesquisa">
+    <label for="pesquisa">Pesquisar registros</label>
+    <input
+        type="search"
+        id="pesquisa"
+        placeholder="Pesquisar por título ou descrição..."
+        autocomplete="off"
+    >
+</div>
+
+        
+<div class="filtros">
+    <div class="campo-filtro">
+        <label for="filtro-tipo">Tipo</label>
+        <select id="filtro-tipo">
+            <option value="todos">Todos</option>
+            <option value="tarefa">Tarefas</option>
+            <option value="bug">Bugs</option>
+        </select>
+    </div>
+
+    <div class="campo-filtro">
+        <label for="filtro-status">Status</label>
+        <select id="filtro-status">
+            <option value="todos">Todos</option>
+            <option value="pendente">Pendente</option>
+            <option value="andamento">Em andamento</option>
+            <option value="concluida">Concluída</option>
+        </select>
+    </div>
+
+    <div class="campo-filtro">
+        <label for="filtro-prioridade">Prioridade</label>
+        <select id="filtro-prioridade">
+            <option value="todos">Todas</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+        </select>
+    </div>
+</div>
+
+
+
+<div class="acoes-filtros">
+    <div class="campo-ordenacao">
+        <label for="ordenacao">Ordenar por</label>
+        <select id="ordenacao">
+            <option value="recentes">Mais recentes primeiro</option>
+            <option value="antigos">Mais antigos primeiro</option>
+            <option value="prioridade-alta">Maior prioridade primeiro</option>
+            <option value="prioridade-baixa">Menor prioridade primeiro</option>
+        </select>
+    </div>
+
+    <button type="button" id="limpar-filtros">
+        Limpar filtros
+    </button>
+</div>
+
+
+        <div id="lista-tarefas"></div>
+    </section>
+</main>
+</body>
+</html>
